@@ -1,0 +1,8 @@
+Join ratio / total clients: 1.0 / 20
+Finished creating server and clients.
+-------------Round number: 0-------------
+Evaluate global model
+Averaged Train Loss: 2.3040
+Averaged Test Accuracy: 0.0937
+Averaged Test AUC: 0.4940
+Std Test Accuracy: 0.1815

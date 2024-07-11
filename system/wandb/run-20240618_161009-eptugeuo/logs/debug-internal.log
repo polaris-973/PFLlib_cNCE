@@ -1,0 +1,27 @@
+2024-06-18 16:10:09,624 INFO    StreamThr :12720 [internal.py:wandb_internal():89] W&B internal server running at pid: 12720, started at: 2024-06-18 16:10:09.623321
+2024-06-18 16:10:09,628 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status
+2024-06-18 16:10:09,638 INFO    WriterThread:12720 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_161009-eptugeuo\run-eptugeuo.wandb
+2024-06-18 16:10:09,639 DEBUG   SenderThread:12720 [sender.py:send():379] send: header
+2024-06-18 16:10:09,696 DEBUG   SenderThread:12720 [sender.py:send():379] send: run
+2024-06-18 16:10:10,125 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:12,859 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:14,739 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 16:10:15,158 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:16,081 WARNING FileStreamThread:12720 [file_stream.py:request_with_retry():671] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/paddeyzhang/SCL_test/5ny6jatu/file_stream (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002F160157608>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x000002F15FFDE3C8>>, timeout=60.0), args: ('https://api.wandb.ai/files/paddeyzhang/SCL_test/5ny6jatu/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2024-06-18 16:10:17,909 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:19,791 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 16:10:20,183 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:22,950 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:24,821 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 16:10:25,212 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:27,982 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:28,730 INFO    SenderThread:12720 [dir_watcher.py:__init__():211] watching files in: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_161009-eptugeuo\files
+2024-06-18 16:10:28,730 INFO    SenderThread:12720 [sender.py:_start_run_threads():1124] run started: eptugeuo with start time 1718698209.624316
+2024-06-18 16:10:28,730 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:29,871 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 16:10:30,249 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:33,031 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:33,757 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:34,912 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 16:10:35,289 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:10:38,083 DEBUG   HandlerThread:12720 [handler.py:handle_request():144] handle_request: status_report

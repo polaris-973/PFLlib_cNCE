@@ -1,0 +1,25 @@
+2024-06-18 20:31:26,481 INFO    StreamThr :35588 [internal.py:wandb_internal():89] W&B internal server running at pid: 35588, started at: 2024-06-18 20:31:26.481947
+2024-06-18 20:31:26,483 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status
+2024-06-18 20:31:26,489 INFO    WriterThread:35588 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_203126-2ngvictk\run-2ngvictk.wandb
+2024-06-18 20:31:26,489 DEBUG   SenderThread:35588 [sender.py:send():379] send: header
+2024-06-18 20:31:26,530 DEBUG   SenderThread:35588 [sender.py:send():379] send: run
+2024-06-18 20:31:27,001 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:27,453 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:31,554 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:32,041 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:32,484 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:36,596 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:37,100 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:37,531 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:41,641 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:42,145 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:42,569 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:46,678 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:47,181 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:47,608 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:51,732 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:52,219 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:52,645 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:56,771 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:57,259 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:57,681 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report

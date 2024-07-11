@@ -1,0 +1,7 @@
+2024-06-18 17:27:08,638 INFO    StreamThr :33816 [internal.py:wandb_internal():89] W&B internal server running at pid: 33816, started at: 2024-06-18 17:27:08.637594
+2024-06-18 17:27:08,652 DEBUG   HandlerThread:33816 [handler.py:handle_request():144] handle_request: status
+2024-06-18 17:27:08,657 INFO    WriterThread:33816 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_172708-nhoudfur\run-nhoudfur.wandb
+2024-06-18 17:27:08,659 DEBUG   SenderThread:33816 [sender.py:send():379] send: header
+2024-06-18 17:27:08,713 DEBUG   SenderThread:33816 [sender.py:send():379] send: run
+2024-06-18 17:27:13,741 DEBUG   HandlerThread:33816 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:27:18,795 DEBUG   HandlerThread:33816 [handler.py:handle_request():144] handle_request: keepalive

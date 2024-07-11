@@ -1,0 +1,12 @@
+Join ratio / total clients: 1.0 / 20
+Finished creating server and clients.
+-------------Round number: 0-------------
+Evaluate global model
+Averaged Train Loss: 6.8674
+Averaged Test Accuracy: 0.0940
+Averaged Test AUC: 0.4892
+Std Test Accuracy: 0.0886
+Std Test AUC: 0.1159
+------------------------- time cost ------------------------- 81.24109768867493
+------------------------- time cost ------------------------- 38.43451166152954
+------------------------- time cost ------------------------- 38.098984718322754

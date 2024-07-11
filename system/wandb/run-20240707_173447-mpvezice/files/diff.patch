@@ -1,0 +1,371 @@
+diff --git a/dataset/utils/dataset_utils.py b/dataset/utils/dataset_utils.py
+index fabcc86..ad146aa 100644
+--- a/dataset/utils/dataset_utils.py
++++ b/dataset/utils/dataset_utils.py
+@@ -23,7 +23,7 @@ from sklearn.model_selection import train_test_split
+ 
+ batch_size = 10
+ train_ratio = 0.75 # merge original training set and test set, then split it manually. 
+-alpha = 0.1 # for Dirichlet distribution. 100 for exdir
++alpha = 0.5 # for Dirichlet distribution. 100 for exdir
+ 
+ def check(config_path, train_path, test_path, num_clients, niid=False, 
+         balance=True, partition=None):
+diff --git a/system/flcore/clients/clientbase.py b/system/flcore/clients/clientbase.py
+index 8a819dc..7f5d461 100644
+--- a/system/flcore/clients/clientbase.py
++++ b/system/flcore/clients/clientbase.py
+@@ -25,7 +25,6 @@ from sklearn.preprocessing import label_binarize
+ from sklearn import metrics
+ from utils.data_utils import read_client_data
+ 
+-
+ class Client(object):
+     """
+     Base class for clients in federated learning.
+@@ -73,6 +72,7 @@ class Client(object):
+             batch_size = self.batch_size
+         train_data = read_client_data(self.dataset, self.id, is_train=True)
+         return DataLoader(train_data, batch_size, drop_last=True, shuffle=True)
++    
+ 
+     def load_test_data(self, batch_size=None):
+         if batch_size == None:
+@@ -160,22 +160,6 @@ class Client(object):
+ 
+         return losses, train_num
+ 
+-    # def get_next_train_batch(self):
+-    #     try:
+-    #         # Samples a new batch for persionalizing
+-    #         (x, y) = next(self.iter_trainloader)
+-    #     except StopIteration:
+-    #         # restart the generator if the previous generator is exhausted.
+-    #         self.iter_trainloader = iter(self.trainloader)
+-    #         (x, y) = next(self.iter_trainloader)
+-
+-    #     if type(x) == type([]):
+-    #         x = x[0]
+-    #     x = x.to(self.device)
+-    #     y = y.to(self.device)
+-
+-    #     return x, y
+-
+ 
+     def save_item(self, item, item_name, item_path=None):
+         if item_path == None:
+diff --git a/system/flcore/servers/serverbase.py b/system/flcore/servers/serverbase.py
+index 09df097..c0a311e 100644
+--- a/system/flcore/servers/serverbase.py
++++ b/system/flcore/servers/serverbase.py
+@@ -21,10 +21,12 @@ import numpy as np
+ import h5py
+ import copy
+ import time
++import datetime as dt
+ import random
+ from utils.data_utils import read_client_data
+ from utils.dlg import DLG
+-
++import wandb
++wandb.login()
+ 
+ class Server(object):
+     def __init__(self, args, times):
+@@ -78,6 +80,15 @@ class Server(object):
+         self.new_clients = []
+         self.eval_new_clients = False
+         self.fine_tuning_epoch_new = args.fine_tuning_epoch_new
++        self.use_wandb = args.use_wandb
++        now_time = dt.datetime.now().strftime('%g' + '%m' + '%d' + '%R')
++        if self.use_wandb:
++            self.wandb_oj = wandb.init(config=args,
++            project=args.wandb,
++            name=args.algorithm + "-" + args.model_str + "-joinRatio-" + str(args.join_ratio) + "-BatchSize-" + str(args.batch_size) + "-localEpoch-" + str(args.local_epochs)
++            + "-" + now_time,
++            job_type="training",
++            reinit=True)
+ 
+     def set_clients(self, clientObj):
+         for i, train_slow, send_slow in zip(range(self.num_clients), self.train_slow_clients, self.send_slow_clients):
+@@ -262,14 +273,16 @@ class Server(object):
+             loss.append(train_loss)
+ 
+         print("Averaged Train Loss: {:.4f}".format(train_loss))
+-        print("Averaged Test Accurancy: {:.4f}".format(test_acc))
++        print("Averaged Test Accuracy: {:.4f}".format(test_acc))
+         print("Averaged Test AUC: {:.4f}".format(test_auc))
+         # self.print_(test_acc, train_acc, train_loss)
+-        print("Std Test Accurancy: {:.4f}".format(np.std(accs)))
++        print("Std Test Accuracy: {:.4f}".format(np.std(accs)))
+         print("Std Test AUC: {:.4f}".format(np.std(aucs)))
++        if self.use_wandb:
++            wandb.log({"accuracy": test_acc, "auc": test_auc, "loss": train_loss, "std_accuracy": np.std(accs)})
+ 
+     def print_(self, test_acc, test_auc, train_loss):
+-        print("Average Test Accurancy: {:.4f}".format(test_acc))
++        print("Average Test Accuracy: {:.4f}".format(test_acc))
+         print("Average Test AUC: {:.4f}".format(test_auc))
+         print("Average Train Loss: {:.4f}".format(train_loss))
+ 
+diff --git a/system/flcore/servers/serverpac.py b/system/flcore/servers/serverpac.py
+index c66e056..ea2dfd0 100644
+--- a/system/flcore/servers/serverpac.py
++++ b/system/flcore/servers/serverpac.py
+@@ -19,7 +19,7 @@ import time
+ import numpy as np
+ import random
+ import torch
+-import cvxpy as cvx
++# import cvxpy as cvx
+ import copy
+ from flcore.clients.clientpac import clientPAC
+ from flcore.servers.serverbase import Server
+diff --git a/system/flcore/trainmodel/models.py b/system/flcore/trainmodel/models.py
+index 3c50f62..b4086d9 100644
+--- a/system/flcore/trainmodel/models.py
++++ b/system/flcore/trainmodel/models.py
+@@ -21,20 +21,42 @@ from torch import nn
+ 
+ batch_size = 10
+ 
+-
+ # split an original model into a base and a head
+ class BaseHeadSplit(nn.Module):
+-    def __init__(self, base, head):
++    def __init__(self, base, head, algorithm_name=None):
+         super(BaseHeadSplit, self).__init__()
+ 
+         self.base = base
+         self.head = head
++        self.algorithm_name = algorithm_name
+         
+     def forward(self, x):
+         out = self.base(x)
+-        out = self.head(out)
+-
++        if self.algorithm_name == "FedASCL":
++            # out = F.normalize(self.head(out), dim=1)
++            out = self.head(out)
++        else:
++            out = self.head(out)
+         return out
++    
++class FedASCLModel(nn.Module):
++    def __init__(self, base, head, dim_hidden, dim_mlp, device):
++        super(FedASCLModel, self).__init__()
++        self.base = base
++        self.head = head
++        dim_in = self.head.weight.shape[1]
++
++        # self.projector = nn.Sequential(nn.Linear(dim_in, dim_hidden), nn.BatchNorm1d(self.dim_hidden), nn.ReLU(inplace=True),
++        #                           nn.Linear(dim_hidden, dim_mlp)).to(device)
++        self.projector = nn.Sequential(nn.Linear(dim_in, dim_hidden), nn.ReLU(inplace=True),
++                                  nn.Linear(dim_hidden, dim_mlp)).to(device)
++
++    def forward(self, x):
++        feat = self.base(x)
++        proj_feat = F.normalize(self.projector(feat), dim=1)
++        logit = self.head(feat)
++
++        return proj_feat, logit
+ 
+ ###########################################################
+ 
+diff --git a/system/main.py b/system/main.py
+index 6ab82e4..a4dae5b 100644
+--- a/system/main.py
++++ b/system/main.py
+@@ -63,6 +63,8 @@ from flcore.servers.servergh import FedGH
+ from flcore.servers.serveravgDBE import FedAvgDBE
+ from flcore.servers.servercac import FedCAC
+ 
++from flcore.servers.serverascl import FedASCL
++
+ from flcore.trainmodel.models import *
+ 
+ from flcore.trainmodel.bilstm import *
+@@ -90,6 +92,7 @@ def run(args):
+     time_list = []
+     reporter = MemReporter()
+     model_str = args.model
++    args.model_str = model_str
+ 
+     for i in range(args.prev, args.times):
+         print(f"\n============= Running time: {i}th =============")
+@@ -358,9 +361,17 @@ def run(args):
+             server = FedAvgDBE(args, i)
+ 
+         elif args.algorithm == 'FedCAC':
++            args.head = copy.deepcopy(args.model.fc)
++            args.model.fc = nn.Identity()
++            args.model = BaseHeadSplit(args.model, args.head)
+             server = FedCAC(args, i)
+ 
+-            
++        elif args.algorithm == 'FedASCL':
++            args.head = copy.deepcopy(args.model.fc)
++            args.model.fc = nn.Identity()
++            args.model = FedASCLModel(args.model, args.head, dim_hidden=512, dim_mlp=128, device=args.device)
++            server = FedASCL(args, i)
++
+         else:
+             raise NotImplementedError
+ 
+@@ -482,6 +493,13 @@ if __name__ == "__main__":
+     parser.add_argument('-mo', "--momentum", type=float, default=0.1)
+     parser.add_argument('-klw', "--kl_weight", type=float, default=0.0)
+ 
++    parser.add_argument('-wb', "--wandb", type=str)
++    parser.add_argument('-uwb', "--use_wandb", type=bool, default=False)
++    # FedASCL
++    parser.add_argument('-mt', "--margin_type", type=str, default="None",
++                        choices=["None", "raw", "scl_mask", "arc", "cos", "rcl", "ecos", "sclp", "cNCE"])
++    parser.add_argument('-nv', "--n_views", type=int, default=2, help="Number of augmented samples generated")
++    parser.add_argument('-AL', "--Alpha", type=float, default=0.7)
+ 
+     args = parser.parse_args()
+ 
+diff --git a/system/utils/data_utils.py b/system/utils/data_utils.py
+index 02a1425..e0a456f 100644
+--- a/system/utils/data_utils.py
++++ b/system/utils/data_utils.py
+@@ -18,7 +18,65 @@
+ import numpy as np
+ import os
+ import torch
+-
++from torch import nn
++from torch.utils.data import Dataset, DataLoader
++from torchvision import transforms
++from PIL import ImageFilter
++import random
++
++
++# 定义 MultiViewGenerator 类
++class MultiViewGenerator:
++    """Create multiple crops of the same image"""
++    def __init__(self, base_transform, n_views=2):
++        self.base_transform = base_transform
++        self.n_views = n_views
++
++    def __call__(self, x):
++        return [x, self.base_transform(x)]
++    
++# 定义自定义数据集类
++class CustomDataset(Dataset):
++    def __init__(self, data, transform=None):
++        self.data = data
++        self.transform = transform
++
++    def __len__(self):
++        return len(self.data)
++
++    def __getitem__(self, idx):
++        x, y = self.data[idx]
++        if self.transform:
++            x = self.transform(x)
++        return x, y
++        
++# 定义类方法加载数据并应用数据增强
++class DataHandler:
++    def __init__(self, dataset, client_id, batch_size, n_views):
++        self.dataset = dataset
++        self.id = client_id
++        self.batch_size = batch_size
++        self.n_views = n_views
++
++    def load_augmented_train_data(self):
++        train_data = read_client_data(self.dataset, self.id, is_train=True)
++        # CIFAR-10
++        color_jitter = transforms.ColorJitter(0.4, 0.4, 0.4, 0.1)
++        train_transform = transforms.Compose([
++            transforms.ToPILImage(),
++            transforms.RandomResizedCrop(size=32, scale=(0.2, 1.)),
++            transforms.RandomApply([color_jitter], p=0.8),
++            transforms.RandomGrayscale(p=0.2),
++            transforms.RandomApply([GaussianBlur([.1, 2.])], p=0.5),
++            transforms.RandomHorizontalFlip(),
++            transforms.ToTensor(),
++            transforms.Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.2023, 0.1994, 0.2010))
++        ])
++
++        train_dataset = CustomDataset(train_data, transform=MultiViewGenerator(train_transform, self.n_views))
++        train_loader = DataLoader(train_dataset, batch_size=self.batch_size, drop_last=True, shuffle=True, pin_memory=True)
++
++        return train_loader
+ 
+ def read_data(dataset, idx, is_train=True):
+     if is_train:
+@@ -39,7 +97,6 @@ def read_data(dataset, idx, is_train=True):
+ 
+         return test_data
+ 
+-
+ def read_client_data(dataset, idx, is_train=True):
+     if "News" in dataset:
+         return read_client_data_text(dataset, idx, is_train)
+@@ -59,7 +116,7 @@ def read_client_data(dataset, idx, is_train=True):
+         y_test = torch.Tensor(test_data['y']).type(torch.int64)
+         test_data = [(x, y) for x, y in zip(X_test, y_test)]
+         return test_data
+-
++    
+ 
+ def read_client_data_text(dataset, idx, is_train=True):
+     if is_train:
+@@ -101,3 +158,53 @@ def read_client_data_Shakespeare(dataset, idx, is_train=True):
+         test_data = [(x, y) for x, y in zip(X_test, y_test)]
+         return test_data
+ 
++
++# class GaussianBlur(object):
++#     """blur a single image on CPU"""
++#     def __init__(self, kernel_size):
++#         radias = kernel_size // 2
++#         kernel_size = radias * 2 + 1
++#         self.blur_h = nn.Conv2d(3, 3, kernel_size=(kernel_size, 1),
++#                                 stride=1, padding=0, bias=False, groups=3)
++#         self.blur_v = nn.Conv2d(3, 3, kernel_size=(1, kernel_size),
++#                                 stride=1, padding=0, bias=False, groups=3)
++#         self.k = kernel_size
++#         self.r = radias
++
++#         self.blur = nn.Sequential(
++#             nn.ReflectionPad2d(radias),
++#             self.blur_h,
++#             self.blur_v
++#         )
++
++#         self.pil_to_tensor = transforms.ToTensor()
++#         self.tensor_to_pil = transforms.ToPILImage()
++
++#     def __call__(self, img):
++#         img = self.pil_to_tensor(img).unsqueeze(0)
++
++#         sigma = np.random.uniform(0.1, 2.0)
++#         x = np.arange(-self.r, self.r + 1)
++#         x = np.exp(-np.power(x, 2) / (2 * sigma * sigma))
++#         x = x / x.sum()
++#         x = torch.from_numpy(x).view(1, -1).repeat(3, 1)
++
++#         self.blur_h.weight.data.copy_(x.view(3, 1, self.k, 1))
++#         self.blur_v.weight.data.copy_(x.view(3, 1, 1, self.k))
++
++#         with torch.no_grad():
++#             img = self.blur(img)
++#             img = img.squeeze()
++
++#         img = self.tensor_to_pil(img)
++
++#         return img
++class GaussianBlur(object):
++    """Gaussian blur augmentation in SimCLR https://arxiv.org/abs/2002.05709"""
++    def __init__(self, sigma=[.1, 2.]):
++        self.sigma = sigma
++
++    def __call__(self, x):
++        sigma = random.uniform(self.sigma[0], self.sigma[1])
++        x = x.filter(ImageFilter.GaussianBlur(radius=sigma))
++        return x
+\ No newline at end of file

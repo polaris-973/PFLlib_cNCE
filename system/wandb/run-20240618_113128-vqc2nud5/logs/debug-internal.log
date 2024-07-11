@@ -1,0 +1,95 @@
+2024-06-18 11:31:28,033 INFO    StreamThr :14020 [internal.py:wandb_internal():89] W&B internal server running at pid: 14020, started at: 2024-06-18 11:31:28.032654
+2024-06-18 11:31:28,034 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status
+2024-06-18 11:31:28,041 INFO    WriterThread:14020 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\run-vqc2nud5.wandb
+2024-06-18 11:31:28,042 DEBUG   SenderThread:14020 [sender.py:send():379] send: header
+2024-06-18 11:31:28,082 DEBUG   SenderThread:14020 [sender.py:send():379] send: run
+2024-06-18 11:31:28,839 INFO    SenderThread:14020 [dir_watcher.py:__init__():211] watching files in: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files
+2024-06-18 11:31:28,840 INFO    SenderThread:14020 [sender.py:_start_run_threads():1124] run started: vqc2nud5 with start time 1718681488.03365
+2024-06-18 11:31:28,840 DEBUG   SenderThread:14020 [sender.py:send_request():406] send_request: summary_record
+2024-06-18 11:31:28,840 INFO    SenderThread:14020 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2024-06-18 11:31:28,850 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: check_version
+2024-06-18 11:31:28,850 DEBUG   SenderThread:14020 [sender.py:send_request():406] send_request: check_version
+2024-06-18 11:31:29,844 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\wandb-summary.json
+2024-06-18 11:31:32,373 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: run_start
+2024-06-18 11:31:32,390 DEBUG   HandlerThread:14020 [system_info.py:__init__():31] System info init
+2024-06-18 11:31:32,390 DEBUG   HandlerThread:14020 [system_info.py:__init__():46] System info init done
+2024-06-18 11:31:32,390 INFO    HandlerThread:14020 [system_monitor.py:start():181] Starting system monitor
+2024-06-18 11:31:32,390 INFO    SystemMonitor:14020 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2024-06-18 11:31:32,390 INFO    HandlerThread:14020 [system_monitor.py:probe():201] Collecting system info
+2024-06-18 11:31:32,394 INFO    SystemMonitor:14020 [interfaces.py:start():190] Started cpu monitoring
+2024-06-18 11:31:32,395 INFO    SystemMonitor:14020 [interfaces.py:start():190] Started disk monitoring
+2024-06-18 11:31:32,395 INFO    SystemMonitor:14020 [interfaces.py:start():190] Started gpu monitoring
+2024-06-18 11:31:32,395 INFO    SystemMonitor:14020 [interfaces.py:start():190] Started memory monitoring
+2024-06-18 11:31:32,403 INFO    SystemMonitor:14020 [interfaces.py:start():190] Started network monitoring
+2024-06-18 11:31:32,403 DEBUG   HandlerThread:14020 [system_info.py:probe():195] Probing system
+2024-06-18 11:31:32,404 DEBUG   HandlerThread:14020 [system_info.py:_probe_git():180] Probing git
+2024-06-18 11:31:32,481 DEBUG   HandlerThread:14020 [system_info.py:_probe_git():188] Probing git done
+2024-06-18 11:31:32,481 DEBUG   HandlerThread:14020 [system_info.py:probe():240] Probing system done
+2024-06-18 11:31:32,481 DEBUG   HandlerThread:14020 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.19041-SP0', 'python': '3.7.12', 'heartbeatAt': '2024-06-18T03:31:32.403616', 'startedAt': '2024-06-18T03:31:28.026673', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'D:\\Research-Projects-jupyter\\PFLlib\\system\\main.py', 'codePath': 'system\\main.py', 'git': {'remote': 'https://github.com/TsingZ0/PFLlib.git', 'commit': '004a405da7c159e843d98b2a53e2114d4f859912'}, 'email': '1731485214@qq.com', 'root': 'D:/Research-Projects-jupyter/PFLlib', 'host': 'DESKTOP-4LOGPS7', 'username': 'paddeyzhang', 'executable': 'D:\\Reseach Software\\envs\\fl\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2500.0, 'min': 0.0, 'max': 2500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 0.0, 'max': 2500.0}], 'disk': {'total': 199.99901962280273, 'used': 69.31604385375977}, 'gpu': 'NVIDIA GeForce RTX 3070', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3070', 'memory_total': 8589934592}], 'memory': {'total': 15.842487335205078}}
+2024-06-18 11:31:32,482 INFO    HandlerThread:14020 [system_monitor.py:probe():211] Finished collecting system info
+2024-06-18 11:31:32,482 INFO    HandlerThread:14020 [system_monitor.py:probe():214] Publishing system info
+2024-06-18 11:31:32,482 DEBUG   HandlerThread:14020 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-06-18 11:31:32,482 DEBUG   HandlerThread:14020 [system_info.py:_save_pip():67] Saving pip packages done
+2024-06-18 11:31:32,483 DEBUG   HandlerThread:14020 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-06-18 11:31:32,484 ERROR   HandlerThread:14020 [system_info.py:_save_conda():85] Error saving conda packages: [WinError 2] 系统找不到指定的文件。
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\system\system_info.py", line 82, in _save_conda
+    ["conda", "env", "export"], stdout=f, stderr=subprocess.DEVNULL
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 339, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 1207, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+2024-06-18 11:31:32,484 DEBUG   HandlerThread:14020 [system_info.py:_save_conda():86] Saving conda packages done
+2024-06-18 11:31:32,484 DEBUG   HandlerThread:14020 [system_info.py:_save_code():89] Saving code
+2024-06-18 11:31:32,524 DEBUG   HandlerThread:14020 [system_info.py:_save_code():110] Saving code done
+2024-06-18 11:31:32,524 DEBUG   HandlerThread:14020 [system_info.py:_save_patches():127] Saving git patches
+2024-06-18 11:31:32,878 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\conda-environment.yaml
+2024-06-18 11:31:32,878 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\requirements.txt
+2024-06-18 11:31:32,878 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\code\system\main.py
+2024-06-18 11:31:32,878 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\code\system
+2024-06-18 11:31:32,878 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\code
+2024-06-18 11:31:33,521 DEBUG   HandlerThread:14020 [system_info.py:_save_patches():169] Saving git patches done
+2024-06-18 11:31:33,523 INFO    HandlerThread:14020 [system_monitor.py:probe():216] Finished publishing system info
+2024-06-18 11:31:33,525 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:31:33,526 DEBUG   SenderThread:14020 [sender.py:send():379] send: files
+2024-06-18 11:31:33,526 INFO    SenderThread:14020 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2024-06-18 11:31:33,526 INFO    SenderThread:14020 [sender.py:_save_file():1375] saving file code\system\main.py with policy now
+2024-06-18 11:31:33,527 INFO    SenderThread:14020 [sender.py:_save_file():1375] saving file diff.patch with policy now
+2024-06-18 11:31:33,541 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 11:31:33,541 DEBUG   SenderThread:14020 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 11:31:33,878 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\wandb-metadata.json
+2024-06-18 11:31:33,879 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\diff.patch
+2024-06-18 11:31:34,200 DEBUG   SenderThread:14020 [sender.py:send():379] send: telemetry
+2024-06-18 11:31:35,319 INFO    wandb-upload_0:14020 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmp0q951i2gwandb\042nmc90-wandb-metadata.json
+2024-06-18 11:31:35,644 INFO    wandb-upload_1:14020 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmp0q951i2gwandb\p2tx916w-code/system/main.py
+2024-06-18 11:31:35,692 INFO    wandb-upload_2:14020 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmp0q951i2gwandb\5c043lp1-diff.patch
+2024-06-18 11:31:37,909 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\output.log
+2024-06-18 11:31:38,981 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:31:39,913 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: pause
+2024-06-18 11:31:39,913 INFO    HandlerThread:14020 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2024-06-18 11:31:39,913 INFO    HandlerThread:14020 [system_monitor.py:finish():190] Stopping system monitor
+2024-06-18 11:31:39,913 DEBUG   SystemMonitor:14020 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2024-06-18 11:31:39,913 INFO    HandlerThread:14020 [interfaces.py:finish():202] Joined cpu monitor
+2024-06-18 11:31:39,913 DEBUG   SystemMonitor:14020 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2024-06-18 11:31:39,919 INFO    HandlerThread:14020 [interfaces.py:finish():202] Joined disk monitor
+2024-06-18 11:31:39,919 DEBUG   SystemMonitor:14020 [system_monitor.py:_start():170] Publishing last batch of metrics
+2024-06-18 11:31:39,927 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\output.log
+2024-06-18 11:31:39,985 INFO    HandlerThread:14020 [interfaces.py:finish():202] Joined gpu monitor
+2024-06-18 11:31:39,985 INFO    HandlerThread:14020 [interfaces.py:finish():202] Joined memory monitor
+2024-06-18 11:31:39,985 INFO    HandlerThread:14020 [interfaces.py:finish():202] Joined network monitor
+2024-06-18 11:31:39,986 DEBUG   SenderThread:14020 [sender.py:send():379] send: stats
+2024-06-18 11:31:41,946 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\output.log
+2024-06-18 11:31:44,027 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:31:48,551 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 11:31:48,552 DEBUG   SenderThread:14020 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 11:31:49,895 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:31:54,946 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:32:00,006 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:32:01,142 INFO    Thread-16 :14020 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_113128-vqc2nud5\files\config.yaml
+2024-06-18 11:32:03,551 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 11:32:03,551 DEBUG   SenderThread:14020 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 11:32:05,841 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:32:10,873 DEBUG   HandlerThread:14020 [handler.py:handle_request():144] handle_request: status_report

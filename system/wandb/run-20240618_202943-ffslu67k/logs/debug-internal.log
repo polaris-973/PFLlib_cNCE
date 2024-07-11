@@ -1,0 +1,131 @@
+2024-06-18 20:29:43,864 INFO    StreamThr :35588 [internal.py:wandb_internal():89] W&B internal server running at pid: 35588, started at: 2024-06-18 20:29:43.864132
+2024-06-18 20:29:43,865 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status
+2024-06-18 20:29:43,872 INFO    WriterThread:35588 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_202943-ffslu67k\run-ffslu67k.wandb
+2024-06-18 20:29:43,873 DEBUG   SenderThread:35588 [sender.py:send():379] send: header
+2024-06-18 20:29:44,027 DEBUG   SenderThread:35588 [sender.py:send():379] send: run
+2024-06-18 20:29:46,171 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:29:49,064 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:29:51,201 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:29:54,108 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:29:56,248 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:29:59,139 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:01,283 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:04,176 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:06,337 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:09,231 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:11,401 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:14,253 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:16,430 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:17,652 INFO    SenderThread:35588 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 202, in _new_conn
+    socket_options=self.socket_options,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 805, in urlopen
+    **response_kw,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x00000224412871C8>, 'Connection to api.wandb.ai timed out. (connect timeout=10)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 497, in send
+    chunked=chunked,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 848, in urlopen
+    method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000224412871C8>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\internal_api.py", line 323, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000224412871C8>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+2024-06-18 20:30:19,294 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:21,483 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:24,333 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:26,519 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:29,374 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:31,559 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:34,404 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:36,591 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:39,437 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:30:41,628 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:44,468 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: cancel
+2024-06-18 20:30:44,468 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: cancel
+2024-06-18 20:30:46,655 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:51,703 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:52,123 DEBUG   SenderThread:35588 [sender.py:send():388] Record cancelled: run
+2024-06-18 20:30:52,123 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:56,763 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:30:57,169 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:01,776 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:02,197 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:06,816 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:07,227 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:11,869 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:12,280 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:16,918 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:17,340 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:21,971 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:22,397 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:26,481 INFO    StreamThr :35588 [internal.py:wandb_internal():89] W&B internal server running at pid: 35588, started at: 2024-06-18 20:31:26.481947
+2024-06-18 20:31:26,483 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status
+2024-06-18 20:31:26,489 INFO    WriterThread:35588 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_203126-2ngvictk\run-2ngvictk.wandb
+2024-06-18 20:31:26,489 DEBUG   SenderThread:35588 [sender.py:send():379] send: header
+2024-06-18 20:31:26,530 DEBUG   SenderThread:35588 [sender.py:send():379] send: run
+2024-06-18 20:31:27,001 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:27,453 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:31,554 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:32,041 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:32,484 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:36,596 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:37,100 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:37,531 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:41,641 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:42,145 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:42,569 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:46,678 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:47,181 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:47,608 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:51,732 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:52,219 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:52,645 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:56,771 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 20:31:57,259 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 20:31:57,681 DEBUG   HandlerThread:35588 [handler.py:handle_request():144] handle_request: status_report

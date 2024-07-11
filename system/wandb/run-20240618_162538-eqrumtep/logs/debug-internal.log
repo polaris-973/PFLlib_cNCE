@@ -1,0 +1,91 @@
+2024-06-18 16:25:38,774 INFO    StreamThr :26252 [internal.py:wandb_internal():89] W&B internal server running at pid: 26252, started at: 2024-06-18 16:25:38.774995
+2024-06-18 16:25:38,775 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status
+2024-06-18 16:25:38,783 INFO    WriterThread:26252 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\run-eqrumtep.wandb
+2024-06-18 16:25:38,784 DEBUG   SenderThread:26252 [sender.py:send():379] send: header
+2024-06-18 16:25:38,824 DEBUG   SenderThread:26252 [sender.py:send():379] send: run
+2024-06-18 16:25:39,701 INFO    SenderThread:26252 [dir_watcher.py:__init__():211] watching files in: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files
+2024-06-18 16:25:39,702 INFO    SenderThread:26252 [sender.py:_start_run_threads():1124] run started: eqrumtep with start time 1718699138.774995
+2024-06-18 16:25:39,702 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: summary_record
+2024-06-18 16:25:39,702 INFO    SenderThread:26252 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2024-06-18 16:25:39,711 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: check_version
+2024-06-18 16:25:39,711 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: check_version
+2024-06-18 16:25:40,206 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: run_start
+2024-06-18 16:25:40,222 DEBUG   HandlerThread:26252 [system_info.py:__init__():31] System info init
+2024-06-18 16:25:40,222 DEBUG   HandlerThread:26252 [system_info.py:__init__():46] System info init done
+2024-06-18 16:25:40,222 INFO    HandlerThread:26252 [system_monitor.py:start():181] Starting system monitor
+2024-06-18 16:25:40,223 INFO    SystemMonitor:26252 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2024-06-18 16:25:40,223 INFO    HandlerThread:26252 [system_monitor.py:probe():201] Collecting system info
+2024-06-18 16:25:40,227 INFO    SystemMonitor:26252 [interfaces.py:start():190] Started cpu monitoring
+2024-06-18 16:25:40,228 INFO    SystemMonitor:26252 [interfaces.py:start():190] Started disk monitoring
+2024-06-18 16:25:40,228 INFO    SystemMonitor:26252 [interfaces.py:start():190] Started gpu monitoring
+2024-06-18 16:25:40,228 INFO    SystemMonitor:26252 [interfaces.py:start():190] Started memory monitoring
+2024-06-18 16:25:40,236 INFO    SystemMonitor:26252 [interfaces.py:start():190] Started network monitoring
+2024-06-18 16:25:40,246 DEBUG   HandlerThread:26252 [system_info.py:probe():195] Probing system
+2024-06-18 16:25:40,247 DEBUG   HandlerThread:26252 [system_info.py:_probe_git():180] Probing git
+2024-06-18 16:25:40,325 DEBUG   HandlerThread:26252 [system_info.py:_probe_git():188] Probing git done
+2024-06-18 16:25:40,325 DEBUG   HandlerThread:26252 [system_info.py:probe():240] Probing system done
+2024-06-18 16:25:40,325 DEBUG   HandlerThread:26252 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.19041-SP0', 'python': '3.7.12', 'heartbeatAt': '2024-06-18T08:25:40.246138', 'startedAt': '2024-06-18T08:25:38.769016', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'D:\\Research-Projects-jupyter\\PFLlib\\system\\main.py', 'codePath': 'system\\main.py', 'git': {'remote': 'https://github.com/TsingZ0/PFLlib.git', 'commit': '004a405da7c159e843d98b2a53e2114d4f859912'}, 'email': '1731485214@qq.com', 'root': 'D:/Research-Projects-jupyter/PFLlib', 'host': 'DESKTOP-4LOGPS7', 'username': 'paddeyzhang', 'executable': 'D:\\Reseach Software\\envs\\fl\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2500.0, 'min': 0.0, 'max': 2500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 0.0, 'max': 2500.0}], 'disk': {'total': 199.99901962280273, 'used': 69.3202018737793}, 'gpu': 'NVIDIA GeForce RTX 3070', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3070', 'memory_total': 8589934592}], 'memory': {'total': 15.842487335205078}}
+2024-06-18 16:25:40,325 INFO    HandlerThread:26252 [system_monitor.py:probe():211] Finished collecting system info
+2024-06-18 16:25:40,325 INFO    HandlerThread:26252 [system_monitor.py:probe():214] Publishing system info
+2024-06-18 16:25:40,325 DEBUG   HandlerThread:26252 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-06-18 16:25:40,325 DEBUG   HandlerThread:26252 [system_info.py:_save_pip():67] Saving pip packages done
+2024-06-18 16:25:40,326 DEBUG   HandlerThread:26252 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-06-18 16:25:40,327 ERROR   HandlerThread:26252 [system_info.py:_save_conda():85] Error saving conda packages: [WinError 2] 系统找不到指定的文件。
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\system\system_info.py", line 82, in _save_conda
+    ["conda", "env", "export"], stdout=f, stderr=subprocess.DEVNULL
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 339, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 1207, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+2024-06-18 16:25:40,327 DEBUG   HandlerThread:26252 [system_info.py:_save_conda():86] Saving conda packages done
+2024-06-18 16:25:40,327 DEBUG   HandlerThread:26252 [system_info.py:_save_code():89] Saving code
+2024-06-18 16:25:40,366 DEBUG   HandlerThread:26252 [system_info.py:_save_code():110] Saving code done
+2024-06-18 16:25:40,366 DEBUG   HandlerThread:26252 [system_info.py:_save_patches():127] Saving git patches
+2024-06-18 16:25:40,703 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\code\system\main.py
+2024-06-18 16:25:40,704 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\wandb-summary.json
+2024-06-18 16:25:40,704 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\conda-environment.yaml
+2024-06-18 16:25:40,704 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\requirements.txt
+2024-06-18 16:25:40,704 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\code\system
+2024-06-18 16:25:40,704 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\code
+2024-06-18 16:25:41,320 DEBUG   HandlerThread:26252 [system_info.py:_save_patches():169] Saving git patches done
+2024-06-18 16:25:41,321 INFO    HandlerThread:26252 [system_monitor.py:probe():216] Finished publishing system info
+2024-06-18 16:25:41,324 DEBUG   SenderThread:26252 [sender.py:send():379] send: files
+2024-06-18 16:25:41,324 INFO    SenderThread:26252 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2024-06-18 16:25:41,324 INFO    SenderThread:26252 [sender.py:_save_file():1375] saving file code\system\main.py with policy now
+2024-06-18 16:25:41,325 INFO    SenderThread:26252 [sender.py:_save_file():1375] saving file diff.patch with policy now
+2024-06-18 16:25:41,339 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 16:25:41,339 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 16:25:41,719 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\diff.patch
+2024-06-18 16:25:41,719 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\wandb-metadata.json
+2024-06-18 16:25:41,959 DEBUG   SenderThread:26252 [sender.py:send():379] send: telemetry
+2024-06-18 16:25:42,623 INFO    wandb-upload_0:26252 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmp2mi44jjywandb\xd6yp3l2-wandb-metadata.json
+2024-06-18 16:25:42,820 INFO    wandb-upload_2:26252 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmp2mi44jjywandb\c750ku63-diff.patch
+2024-06-18 16:25:42,951 INFO    wandb-upload_1:26252 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmp2mi44jjywandb\7rdg8awq-code/system/main.py
+2024-06-18 16:25:43,965 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:25:45,751 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\output.log
+2024-06-18 16:25:47,756 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\output.log
+2024-06-18 16:25:49,797 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:25:54,843 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:25:56,345 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 16:25:56,345 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 16:26:00,722 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:26:05,762 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:26:10,817 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:26:11,362 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 16:26:11,362 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 16:26:11,981 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\config.yaml
+2024-06-18 16:26:16,701 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:26:21,745 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:26:26,370 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 16:26:26,371 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 16:26:27,646 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 16:26:28,289 DEBUG   HandlerThread:26252 [handler.py:handle_request():144] handle_request: partial_history
+2024-06-18 16:26:28,290 DEBUG   SenderThread:26252 [sender.py:send():379] send: history
+2024-06-18 16:26:28,290 DEBUG   SenderThread:26252 [sender.py:send_request():406] send_request: summary_record
+2024-06-18 16:26:28,292 INFO    SenderThread:26252 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2024-06-18 16:26:29,114 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\wandb-summary.json
+2024-06-18 16:26:29,115 INFO    Thread-16 :26252 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_162538-eqrumtep\files\output.log

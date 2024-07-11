@@ -1,0 +1,78 @@
+2024-06-18 17:27:32,985 INFO    StreamThr :34360 [internal.py:wandb_internal():89] W&B internal server running at pid: 34360, started at: 2024-06-18 17:27:32.985206
+2024-06-18 17:27:32,986 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: status
+2024-06-18 17:27:32,999 INFO    WriterThread:34360 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_172732-fkldyvl8\run-fkldyvl8.wandb
+2024-06-18 17:27:33,000 DEBUG   SenderThread:34360 [sender.py:send():379] send: header
+2024-06-18 17:27:33,053 DEBUG   SenderThread:34360 [sender.py:send():379] send: run
+2024-06-18 17:27:38,098 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:27:43,144 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:27:48,183 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:27:53,225 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:27:58,276 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:03,331 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:06,700 INFO    SenderThread:34360 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 202, in _new_conn
+    socket_options=self.socket_options,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 805, in urlopen
+    **response_kw,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x0000012EF5D84148>, 'Connection to api.wandb.ai timed out. (connect timeout=10)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 497, in send
+    chunked=chunked,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 848, in urlopen
+    method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000012EF5D84148>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\internal_api.py", line 323, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000012EF5D84148>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+2024-06-18 17:28:08,352 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:13,412 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:18,475 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:23,523 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:28,557 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 17:28:33,598 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: cancel
+2024-06-18 17:28:33,598 DEBUG   HandlerThread:34360 [handler.py:handle_request():144] handle_request: cancel

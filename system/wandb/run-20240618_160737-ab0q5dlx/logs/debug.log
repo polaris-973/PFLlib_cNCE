@@ -1,0 +1,108 @@
+2024-06-18 16:07:37,191 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Current SDK version is 0.15.8
+2024-06-18 16:07:37,191 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Configure stats pid to 28732
+2024-06-18 16:07:37,191 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Loading settings from C:\Users\ly\.config\wandb\settings
+2024-06-18 16:07:37,191 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Loading settings from D:\Research-Projects-jupyter\PFLlib\system\wandb\settings
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'system\\main.py', 'program': 'D:\\Research-Projects-jupyter\\PFLlib\\system\\main.py'}
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_init.py:_log_setup():507] Logging user logs to D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_160737-ab0q5dlx\logs\debug.log
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_init.py:_log_setup():508] Logging internal logs to D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_160737-ab0q5dlx\logs\debug-internal.log
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_init.py:init():547] calling init triggers
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_init.py:init():555] wandb.init called with sweep_config: {}
+config: {'goal': 'test', 'device': 'cuda', 'device_id': '0', 'dataset': 'Cifar10', 'num_classes': 10, 'model': BaseHeadSplit(
+  (base): FedAvgCNN(
+    (conv1): Sequential(
+      (0): Conv2d(3, 32, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (conv2): Sequential(
+      (0): Conv2d(32, 64, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (fc1): Sequential(
+      (0): Linear(in_features=1600, out_features=512, bias=True)
+      (1): ReLU(inplace=True)
+    )
+    (fc): Identity()
+  )
+  (head): Linear(in_features=512, out_features=10, bias=True)
+), 'batch_size': 64, 'local_learning_rate': 0.005, 'learning_rate_decay': False, 'learning_rate_decay_gamma': 0.99, 'global_rounds': 1000, 'local_epochs': 1, 'algorithm': 'FedASCL', 'join_ratio': 1.0, 'random_join_ratio': False, 'num_clients': 20, 'prev': 0, 'times': 1, 'eval_gap': 10, 'save_folder_name': 'items', 'auto_break': False, 'dlg_eval': False, 'dlg_gap': 100, 'batch_num_per_client': 2, 'num_new_clients': 0, 'fine_tuning_epoch_new': 0, 'client_drop_rate': 0.0, 'train_slow_rate': 0.0, 'send_slow_rate': 0.0, 'time_select': False, 'time_threthold': 10000, 'beta': 0.0, 'lamda': 1.0, 'mu': 0.0, 'K': 5, 'p_learning_rate': 0.01, 'M': 5, 'itk': 4000, 'alphaK': 1.0, 'sigma': 1.0, 'alpha': 1.0, 'plocal_epochs': 1, 'tau': 1.0, 'fine_tuning_epochs': 10, 'dr_learning_rate': 0.0, 'L': 1.0, 'noise_dim': 512, 'generator_learning_rate': 0.005, 'hidden_dim': 512, 'server_epochs': 1000, 'localize_feature_extractor': False, 'server_learning_rate': 1.0, 'eta': 1.0, 'rand_percent': 80, 'layer_idx': 2, 'mentee_learning_rate': 0.005, 'T_start': 0.95, 'T_end': 0.98, 'momentum': 0.1, 'kl_weight': 0.0, 'wandb': 'SCL_test', 'margin_type': 'cNCE', 'n_views': 2, 'model_str': 'cnn', 'head': Linear(in_features=512, out_features=10, bias=True)}
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_init.py:init():596] starting backend
+2024-06-18 16:07:37,192 INFO    MainThread:28732 [wandb_init.py:init():600] setting up manager
+2024-06-18 16:07:37,194 INFO    MainThread:28732 [backend.py:_multiprocessing_setup():108] multiprocessing start_methods=spawn, using: spawn
+2024-06-18 16:07:37,194 INFO    MainThread:28732 [wandb_init.py:init():606] backend started and connected
+2024-06-18 16:07:37,202 INFO    MainThread:28732 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2024-06-18 16:07:37,202 INFO    MainThread:28732 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-06-18 16:07:37,202 INFO    MainThread:28732 [wandb_init.py:init():697] updated telemetry
+2024-06-18 16:07:37,241 INFO    MainThread:28732 [wandb_init.py:init():730] communicating run to backend with 60.0 second timeout
+2024-06-18 16:08:37,772 ERROR   MainThread:28732 [wandb_init.py:init():756] encountered error: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-06-18 16:08:37,978 ERROR   MainThread:28732 [wandb_init.py:init():1165] Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\wandb_init.py", line 1147, in init
+    run = wi.init()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\wandb_init.py", line 762, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-06-18 16:10:09,615 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Current SDK version is 0.15.8
+2024-06-18 16:10:09,616 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Configure stats pid to 28732
+2024-06-18 16:10:09,616 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Loading settings from C:\Users\ly\.config\wandb\settings
+2024-06-18 16:10:09,616 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Loading settings from D:\Research-Projects-jupyter\PFLlib\system\wandb\settings
+2024-06-18 16:10:09,616 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-06-18 16:10:09,616 INFO    MainThread:28732 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'system\\main.py', 'program': 'D:\\Research-Projects-jupyter\\PFLlib\\system\\main.py'}
+2024-06-18 16:10:09,617 INFO    MainThread:28732 [wandb_init.py:_log_setup():507] Logging user logs to D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_161009-eptugeuo\logs\debug.log
+2024-06-18 16:10:09,617 INFO    MainThread:28732 [wandb_init.py:_log_setup():508] Logging internal logs to D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_161009-eptugeuo\logs\debug-internal.log
+2024-06-18 16:10:09,617 INFO    MainThread:28732 [wandb_init.py:init():547] calling init triggers
+2024-06-18 16:10:09,618 INFO    MainThread:28732 [wandb_init.py:init():555] wandb.init called with sweep_config: {}
+config: {'goal': 'test', 'device': 'cuda', 'device_id': '0', 'dataset': 'Cifar10', 'num_classes': 10, 'model': BaseHeadSplit(
+  (base): FedAvgCNN(
+    (conv1): Sequential(
+      (0): Conv2d(3, 32, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (conv2): Sequential(
+      (0): Conv2d(32, 64, kernel_size=(5, 5), stride=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (fc1): Sequential(
+      (0): Linear(in_features=1600, out_features=512, bias=True)
+      (1): ReLU(inplace=True)
+    )
+    (fc): Identity()
+  )
+  (head): Linear(in_features=512, out_features=10, bias=True)
+), 'batch_size': 64, 'local_learning_rate': 0.005, 'learning_rate_decay': False, 'learning_rate_decay_gamma': 0.99, 'global_rounds': 1000, 'local_epochs': 1, 'algorithm': 'FedASCL', 'join_ratio': 1.0, 'random_join_ratio': False, 'num_clients': 20, 'prev': 0, 'times': 1, 'eval_gap': 10, 'save_folder_name': 'items', 'auto_break': False, 'dlg_eval': False, 'dlg_gap': 100, 'batch_num_per_client': 2, 'num_new_clients': 0, 'fine_tuning_epoch_new': 0, 'client_drop_rate': 0.0, 'train_slow_rate': 0.0, 'send_slow_rate': 0.0, 'time_select': False, 'time_threthold': 10000, 'beta': 0.0, 'lamda': 1.0, 'mu': 0.0, 'K': 5, 'p_learning_rate': 0.01, 'M': 5, 'itk': 4000, 'alphaK': 1.0, 'sigma': 1.0, 'alpha': 1.0, 'plocal_epochs': 1, 'tau': 1.0, 'fine_tuning_epochs': 10, 'dr_learning_rate': 0.0, 'L': 1.0, 'noise_dim': 512, 'generator_learning_rate': 0.005, 'hidden_dim': 512, 'server_epochs': 1000, 'localize_feature_extractor': False, 'server_learning_rate': 1.0, 'eta': 1.0, 'rand_percent': 80, 'layer_idx': 2, 'mentee_learning_rate': 0.005, 'T_start': 0.95, 'T_end': 0.98, 'momentum': 0.1, 'kl_weight': 0.0, 'wandb': 'SCL_test', 'margin_type': 'cNCE', 'n_views': 2, 'model_str': 'cnn', 'head': Linear(in_features=512, out_features=10, bias=True)}
+2024-06-18 16:10:09,618 INFO    MainThread:28732 [wandb_init.py:init():596] starting backend
+2024-06-18 16:10:09,618 INFO    MainThread:28732 [wandb_init.py:init():600] setting up manager
+2024-06-18 16:10:09,621 INFO    MainThread:28732 [backend.py:_multiprocessing_setup():108] multiprocessing start_methods=spawn, using: spawn
+2024-06-18 16:10:09,624 INFO    MainThread:28732 [wandb_init.py:init():606] backend started and connected
+2024-06-18 16:10:09,637 INFO    MainThread:28732 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2024-06-18 16:10:09,637 INFO    MainThread:28732 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-06-18 16:10:09,638 INFO    MainThread:28732 [wandb_init.py:init():697] updated telemetry
+2024-06-18 16:10:09,694 INFO    MainThread:28732 [wandb_init.py:init():730] communicating run to backend with 60.0 second timeout
+2024-06-18 16:10:28,729 WARNING MsgRouterThr:28732 [router.py:message_loop():77] message_loop has been closed
+2024-06-18 16:10:28,729 WARNING MsgRouterThr:28732 [router.py:message_loop():77] message_loop has been closed
+2024-06-18 16:10:38,626 WARNING MsgRouterThr:28732 [router.py:message_loop():77] message_loop has been closed
+2024-06-18 16:10:38,626 WARNING MsgRouterThr:28732 [router.py:message_loop():77] message_loop has been closed
+2024-06-18 16:10:38,953 WARNING MainThread:28732 [wandb_init.py:init():1169] interrupted
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\wandb_init.py", line 1147, in init
+    run = wi.init()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\wandb_init.py", line 736, in init
+    cancel=True,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "D:\Reseach Software\envs\fl\lib\threading.py", line 552, in wait
+    signaled = self._cond.wait(timeout)
+  File "D:\Reseach Software\envs\fl\lib\threading.py", line 300, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

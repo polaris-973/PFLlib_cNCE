@@ -1,0 +1,56 @@
+2024-06-18 14:56:11,140 INFO    StreamThr :844 [internal.py:wandb_internal():89] W&B internal server running at pid: 844, started at: 2024-06-18 14:56:11.139986
+2024-06-18 14:56:11,141 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: status
+2024-06-18 14:56:11,148 INFO    WriterThread:844 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_145611-pjhqe0r2\run-pjhqe0r2.wandb
+2024-06-18 14:56:11,149 DEBUG   SenderThread:844 [sender.py:send():379] send: header
+2024-06-18 14:56:11,317 DEBUG   SenderThread:844 [sender.py:send():379] send: run
+2024-06-18 14:56:16,350 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:21,386 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:25,153 INFO    SenderThread:844 [retry.py:__call__():172] Retry attempt failed:
+urllib3.exceptions.SSLError: [SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)
+
+The above exception was the direct cause of the following exception:
+
+urllib3.exceptions.ProxyError: ('Unable to connect to proxy', SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 497, in send
+    chunked=chunked,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 848, in urlopen
+    method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)'))))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\internal_api.py", line 323, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 513, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)'))))
+2024-06-18 14:56:26,424 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:31,461 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:36,509 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:41,536 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:46,577 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:51,607 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:56:56,643 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:57:01,699 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:57:06,745 DEBUG   HandlerThread:844 [handler.py:handle_request():144] handle_request: keepalive

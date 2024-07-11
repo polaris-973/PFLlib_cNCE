@@ -1,0 +1,161 @@
+2024-06-18 15:02:46,559 INFO    StreamThr :22276 [internal.py:wandb_internal():89] W&B internal server running at pid: 22276, started at: 2024-06-18 15:02:46.558694
+2024-06-18 15:02:46,561 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: status
+2024-06-18 15:02:46,571 INFO    WriterThread:22276 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\run-8hjbdk3f.wandb
+2024-06-18 15:02:46,571 DEBUG   SenderThread:22276 [sender.py:send():379] send: header
+2024-06-18 15:02:46,624 DEBUG   SenderThread:22276 [sender.py:send():379] send: run
+2024-06-18 15:02:47,546 INFO    SenderThread:22276 [dir_watcher.py:__init__():211] watching files in: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files
+2024-06-18 15:02:47,546 INFO    SenderThread:22276 [sender.py:_start_run_threads():1124] run started: 8hjbdk3f with start time 1718694166.559689
+2024-06-18 15:02:47,546 DEBUG   SenderThread:22276 [sender.py:send_request():406] send_request: summary_record
+2024-06-18 15:02:47,546 INFO    SenderThread:22276 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2024-06-18 15:02:47,557 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: check_version
+2024-06-18 15:02:47,557 DEBUG   SenderThread:22276 [sender.py:send_request():406] send_request: check_version
+2024-06-18 15:02:48,561 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\wandb-summary.json
+2024-06-18 15:02:49,307 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: run_start
+2024-06-18 15:02:49,326 DEBUG   HandlerThread:22276 [system_info.py:__init__():31] System info init
+2024-06-18 15:02:49,326 DEBUG   HandlerThread:22276 [system_info.py:__init__():46] System info init done
+2024-06-18 15:02:49,326 INFO    HandlerThread:22276 [system_monitor.py:start():181] Starting system monitor
+2024-06-18 15:02:49,326 INFO    SystemMonitor:22276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2024-06-18 15:02:49,326 INFO    HandlerThread:22276 [system_monitor.py:probe():201] Collecting system info
+2024-06-18 15:02:49,331 INFO    SystemMonitor:22276 [interfaces.py:start():190] Started cpu monitoring
+2024-06-18 15:02:49,331 INFO    SystemMonitor:22276 [interfaces.py:start():190] Started disk monitoring
+2024-06-18 15:02:49,332 INFO    SystemMonitor:22276 [interfaces.py:start():190] Started gpu monitoring
+2024-06-18 15:02:49,332 INFO    SystemMonitor:22276 [interfaces.py:start():190] Started memory monitoring
+2024-06-18 15:02:49,342 INFO    SystemMonitor:22276 [interfaces.py:start():190] Started network monitoring
+2024-06-18 15:02:49,348 DEBUG   HandlerThread:22276 [system_info.py:probe():195] Probing system
+2024-06-18 15:02:49,349 DEBUG   HandlerThread:22276 [system_info.py:_probe_git():180] Probing git
+2024-06-18 15:02:49,431 DEBUG   HandlerThread:22276 [system_info.py:_probe_git():188] Probing git done
+2024-06-18 15:02:49,432 DEBUG   HandlerThread:22276 [system_info.py:probe():240] Probing system done
+2024-06-18 15:02:49,432 DEBUG   HandlerThread:22276 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.19041-SP0', 'python': '3.7.12', 'heartbeatAt': '2024-06-18T07:02:49.348179', 'startedAt': '2024-06-18T07:02:46.552713', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'D:\\Research-Projects-jupyter\\PFLlib\\system\\main.py', 'codePath': 'system\\main.py', 'git': {'remote': 'https://github.com/TsingZ0/PFLlib.git', 'commit': '004a405da7c159e843d98b2a53e2114d4f859912'}, 'email': '1731485214@qq.com', 'root': 'D:/Research-Projects-jupyter/PFLlib', 'host': 'DESKTOP-4LOGPS7', 'username': 'paddeyzhang', 'executable': 'D:\\Reseach Software\\envs\\fl\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2500.0, 'min': 0.0, 'max': 2500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 0.0, 'max': 2500.0}], 'disk': {'total': 199.99901962280273, 'used': 69.31824493408203}, 'gpu': 'NVIDIA GeForce RTX 3070', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3070', 'memory_total': 8589934592}], 'memory': {'total': 15.842487335205078}}
+2024-06-18 15:02:49,432 INFO    HandlerThread:22276 [system_monitor.py:probe():211] Finished collecting system info
+2024-06-18 15:02:49,432 INFO    HandlerThread:22276 [system_monitor.py:probe():214] Publishing system info
+2024-06-18 15:02:49,432 DEBUG   HandlerThread:22276 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-06-18 15:02:49,432 DEBUG   HandlerThread:22276 [system_info.py:_save_pip():67] Saving pip packages done
+2024-06-18 15:02:49,433 DEBUG   HandlerThread:22276 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-06-18 15:02:49,434 ERROR   HandlerThread:22276 [system_info.py:_save_conda():85] Error saving conda packages: [WinError 2] 系统找不到指定的文件。
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\system\system_info.py", line 82, in _save_conda
+    ["conda", "env", "export"], stdout=f, stderr=subprocess.DEVNULL
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 339, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "D:\Reseach Software\envs\fl\lib\subprocess.py", line 1207, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+2024-06-18 15:02:49,434 DEBUG   HandlerThread:22276 [system_info.py:_save_conda():86] Saving conda packages done
+2024-06-18 15:02:49,434 DEBUG   HandlerThread:22276 [system_info.py:_save_code():89] Saving code
+2024-06-18 15:02:49,476 DEBUG   HandlerThread:22276 [system_info.py:_save_code():110] Saving code done
+2024-06-18 15:02:49,476 DEBUG   HandlerThread:22276 [system_info.py:_save_patches():127] Saving git patches
+2024-06-18 15:02:49,566 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\conda-environment.yaml
+2024-06-18 15:02:49,566 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\requirements.txt
+2024-06-18 15:02:49,566 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\code\system\main.py
+2024-06-18 15:02:49,566 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\code
+2024-06-18 15:02:49,566 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\code\system
+2024-06-18 15:02:50,527 DEBUG   HandlerThread:22276 [system_info.py:_save_patches():169] Saving git patches done
+2024-06-18 15:02:50,528 INFO    HandlerThread:22276 [system_monitor.py:probe():216] Finished publishing system info
+2024-06-18 15:02:50,531 DEBUG   SenderThread:22276 [sender.py:send():379] send: files
+2024-06-18 15:02:50,531 INFO    SenderThread:22276 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2024-06-18 15:02:50,532 INFO    SenderThread:22276 [sender.py:_save_file():1375] saving file code\system\main.py with policy now
+2024-06-18 15:02:50,532 INFO    SenderThread:22276 [sender.py:_save_file():1375] saving file diff.patch with policy now
+2024-06-18 15:02:50,551 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 15:02:50,552 DEBUG   SenderThread:22276 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 15:02:50,573 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\diff.patch
+2024-06-18 15:02:50,573 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\wandb-metadata.json
+2024-06-18 15:02:51,412 DEBUG   SenderThread:22276 [sender.py:send():379] send: telemetry
+2024-06-18 15:02:51,544 INFO    wandb-upload_0:22276 [upload_job.py:push():131] Uploaded file C:\Users\ly\AppData\Local\Temp\tmpbgwgss2wwandb\arjmi3mb-wandb-metadata.json
+2024-06-18 15:02:52,420 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 15:02:54,606 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\output.log
+2024-06-18 15:02:56,623 INFO    Thread-16 :22276 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_150246-8hjbdk3f\files\output.log
+2024-06-18 15:02:57,461 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 15:03:00,850 WARNING FileStreamThread:22276 [file_stream.py:request_with_retry():671] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/paddeyzhang/SCL_test/8hjbdk3f/file_stream (Caused by SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:2570)'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x0000022DC66FED48>>, timeout=60.0), args: ('https://api.wandb.ai/files/paddeyzhang/SCL_test/8hjbdk3f/file_stream',), kwargs: {'json': {'files': {'wandb-summary.json': {'offset': 0, 'content': ['{}']}}, 'dropped': 0}}
+2024-06-18 15:03:02,505 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 15:03:05,540 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: stop_status
+2024-06-18 15:03:05,540 DEBUG   SenderThread:22276 [sender.py:send_request():406] send_request: stop_status
+2024-06-18 15:03:10,580 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:15,548 INFO    SenderThread:22276 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "D:\Reseach Software\envs\fl\lib\http\client.py", line 1373, in getresponse
+    response.begin()
+  File "D:\Reseach Software\envs\fl\lib\http\client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "D:\Reseach Software\envs\fl\lib\http\client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\Reseach Software\envs\fl\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "D:\Reseach Software\envs\fl\lib\ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "D:\Reseach Software\envs\fl\lib\ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 497, in send
+    chunked=chunked,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 848, in urlopen
+    method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 805, in urlopen
+    **response_kw,
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 539, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\urllib3\connectionpool.py", line 372, in _raise_timeout
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\internal\internal_api.py", line 323, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Reseach Software\envs\fl\lib\site-packages\requests\adapters.py", line 532, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=10)
+2024-06-18 15:03:15,612 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:24,214 WARNING FileStreamThread:22276 [file_stream.py:request_with_retry():671] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/paddeyzhang/SCL_test/8hjbdk3f/file_stream (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022DC686E208>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x0000022DC66FED48>>, timeout=60.0), args: ('https://api.wandb.ai/files/paddeyzhang/SCL_test/8hjbdk3f/file_stream',), kwargs: {'json': {'files': {'wandb-summary.json': {'offset': 0, 'content': ['{}']}}, 'dropped': 0}}
+2024-06-18 15:03:25,698 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:30,723 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:35,770 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:40,803 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:45,844 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:49,311 WARNING FileStreamThread:22276 [file_stream.py:request_with_retry():671] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/paddeyzhang/SCL_test/8hjbdk3f/file_stream (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022DC69AA488>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x0000022DC66FED48>>, timeout=60.0), args: ('https://api.wandb.ai/files/paddeyzhang/SCL_test/8hjbdk3f/file_stream',), kwargs: {'json': {'files': {'wandb-summary.json': {'offset': 0, 'content': ['{}']}}, 'dropped': 0}}
+2024-06-18 15:03:49,342 DEBUG   SystemMonitor:22276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2024-06-18 15:03:50,895 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:03:55,935 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:00,967 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:06,002 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:11,055 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:16,096 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:19,776 WARNING FileStreamThread:22276 [file_stream.py:request_with_retry():671] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/paddeyzhang/SCL_test/8hjbdk3f/file_stream (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022DC68297C8>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x0000022DC66FED48>>, timeout=60.0), args: ('https://api.wandb.ai/files/paddeyzhang/SCL_test/8hjbdk3f/file_stream',), kwargs: {'json': {'files': {'wandb-summary.json': {'offset': 0, 'content': ['{}']}}, 'dropped': 0}}
+2024-06-18 15:04:21,153 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:26,175 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:31,228 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:36,276 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:41,332 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:46,382 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:51,410 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:56,448 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 15:04:58,412 WARNING FileStreamThread:22276 [file_stream.py:request_with_retry():671] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/paddeyzhang/SCL_test/8hjbdk3f/file_stream (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022DC6846DC8>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x0000022DC66FED48>>, timeout=60.0), args: ('https://api.wandb.ai/files/paddeyzhang/SCL_test/8hjbdk3f/file_stream',), kwargs: {'json': {'files': {'wandb-summary.json': {'offset': 0, 'content': ['{}']}}, 'dropped': 0}}
+2024-06-18 15:05:01,486 DEBUG   HandlerThread:22276 [handler.py:handle_request():144] handle_request: keepalive

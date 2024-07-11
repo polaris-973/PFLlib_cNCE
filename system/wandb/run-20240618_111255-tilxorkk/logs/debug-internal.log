@@ -1,0 +1,7 @@
+2024-06-18 11:12:55,327 INFO    StreamThr :23176 [internal.py:wandb_internal():89] W&B internal server running at pid: 23176, started at: 2024-06-18 11:12:55.326253
+2024-06-18 11:12:55,327 DEBUG   HandlerThread:23176 [handler.py:handle_request():144] handle_request: status
+2024-06-18 11:12:55,334 INFO    WriterThread:23176 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_111255-tilxorkk\run-tilxorkk.wandb
+2024-06-18 11:12:55,335 DEBUG   SenderThread:23176 [sender.py:send():379] send: header
+2024-06-18 11:12:55,376 DEBUG   SenderThread:23176 [sender.py:send():379] send: run
+2024-06-18 11:12:58,566 DEBUG   HandlerThread:23176 [handler.py:handle_request():144] handle_request: status_report
+2024-06-18 11:13:00,423 DEBUG   HandlerThread:23176 [handler.py:handle_request():144] handle_request: keepalive

@@ -1,0 +1,7 @@
+2024-06-18 14:26:40,754 INFO    StreamThr :10968 [internal.py:wandb_internal():89] W&B internal server running at pid: 10968, started at: 2024-06-18 14:26:40.753599
+2024-06-18 14:26:40,755 DEBUG   HandlerThread:10968 [handler.py:handle_request():144] handle_request: status
+2024-06-18 14:26:40,763 INFO    WriterThread:10968 [datastore.py:open_for_write():85] open: D:\Research-Projects-jupyter\PFLlib\system\wandb\run-20240618_142640-u6ie57gs\run-u6ie57gs.wandb
+2024-06-18 14:26:40,764 DEBUG   SenderThread:10968 [sender.py:send():379] send: header
+2024-06-18 14:26:40,806 DEBUG   SenderThread:10968 [sender.py:send():379] send: run
+2024-06-18 14:26:45,851 DEBUG   HandlerThread:10968 [handler.py:handle_request():144] handle_request: keepalive
+2024-06-18 14:26:50,909 DEBUG   HandlerThread:10968 [handler.py:handle_request():144] handle_request: keepalive

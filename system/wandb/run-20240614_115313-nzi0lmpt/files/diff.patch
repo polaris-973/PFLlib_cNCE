@@ -1,0 +1,124 @@
+diff --git a/dataset/utils/dataset_utils.py b/dataset/utils/dataset_utils.py
+index fabcc86..ad146aa 100644
+--- a/dataset/utils/dataset_utils.py
++++ b/dataset/utils/dataset_utils.py
+@@ -23,7 +23,7 @@ from sklearn.model_selection import train_test_split
+ 
+ batch_size = 10
+ train_ratio = 0.75 # merge original training set and test set, then split it manually. 
+-alpha = 0.1 # for Dirichlet distribution. 100 for exdir
++alpha = 0.5 # for Dirichlet distribution. 100 for exdir
+ 
+ def check(config_path, train_path, test_path, num_clients, niid=False, 
+         balance=True, partition=None):
+diff --git a/system/flcore/servers/serverbase.py b/system/flcore/servers/serverbase.py
+index 09df097..0b9c043 100644
+--- a/system/flcore/servers/serverbase.py
++++ b/system/flcore/servers/serverbase.py
+@@ -24,7 +24,8 @@ import time
+ import random
+ from utils.data_utils import read_client_data
+ from utils.dlg import DLG
+-
++import wandb
++wandb.login()
+ 
+ class Server(object):
+     def __init__(self, args, times):
+@@ -79,6 +80,12 @@ class Server(object):
+         self.eval_new_clients = False
+         self.fine_tuning_epoch_new = args.fine_tuning_epoch_new
+ 
++        self.wandb_oj = wandb.init(config=args,
++           project=args.wandb,
++           name=args.algorithm + "-" + args.model_str + "-joinRatio-" + str(args.join_ratio) + "-BatchSize-" + str(args.batch_size) + "-localEpoch-" + str(args.local_epochs),
++           job_type="training",
++           reinit=True)
++
+     def set_clients(self, clientObj):
+         for i, train_slow, send_slow in zip(range(self.num_clients), self.train_slow_clients, self.send_slow_clients):
+             train_data = read_client_data(self.dataset, i, is_train=True)
+@@ -262,14 +269,16 @@ class Server(object):
+             loss.append(train_loss)
+ 
+         print("Averaged Train Loss: {:.4f}".format(train_loss))
+-        print("Averaged Test Accurancy: {:.4f}".format(test_acc))
++        print("Averaged Test Accuracy: {:.4f}".format(test_acc))
+         print("Averaged Test AUC: {:.4f}".format(test_auc))
+         # self.print_(test_acc, train_acc, train_loss)
+-        print("Std Test Accurancy: {:.4f}".format(np.std(accs)))
++        print("Std Test Accuracy: {:.4f}".format(np.std(accs)))
+         print("Std Test AUC: {:.4f}".format(np.std(aucs)))
+ 
++        wandb.log({"accuracy": test_acc, "auc": test_auc, "loss": train_loss, "std_accuracy": np.std(accs)})
++
+     def print_(self, test_acc, test_auc, train_loss):
+-        print("Average Test Accurancy: {:.4f}".format(test_acc))
++        print("Average Test Accuracy: {:.4f}".format(test_acc))
+         print("Average Test AUC: {:.4f}".format(test_auc))
+         print("Average Train Loss: {:.4f}".format(train_loss))
+ 
+diff --git a/system/flcore/servers/serverpac.py b/system/flcore/servers/serverpac.py
+index c66e056..ea2dfd0 100644
+--- a/system/flcore/servers/serverpac.py
++++ b/system/flcore/servers/serverpac.py
+@@ -19,7 +19,7 @@ import time
+ import numpy as np
+ import random
+ import torch
+-import cvxpy as cvx
++# import cvxpy as cvx
+ import copy
+ from flcore.clients.clientpac import clientPAC
+ from flcore.servers.serverbase import Server
+diff --git a/system/main.py b/system/main.py
+index 6ab82e4..a91b71f 100644
+--- a/system/main.py
++++ b/system/main.py
+@@ -63,6 +63,8 @@ from flcore.servers.servergh import FedGH
+ from flcore.servers.serveravgDBE import FedAvgDBE
+ from flcore.servers.servercac import FedCAC
+ 
++from flcore.servers.serverascl import FedASCL
++
+ from flcore.trainmodel.models import *
+ 
+ from flcore.trainmodel.bilstm import *
+@@ -90,6 +92,7 @@ def run(args):
+     time_list = []
+     reporter = MemReporter()
+     model_str = args.model
++    args.model_str = model_str
+ 
+     for i in range(args.prev, args.times):
+         print(f"\n============= Running time: {i}th =============")
+@@ -358,9 +361,16 @@ def run(args):
+             server = FedAvgDBE(args, i)
+ 
+         elif args.algorithm == 'FedCAC':
++            args.head = copy.deepcopy(args.model.fc)
++            args.model.fc = nn.Identity()
++            args.model = BaseHeadSplit(args.model, args.head)
+             server = FedCAC(args, i)
+ 
+-            
++        elif args.algorithm == 'FedASCL':
++            args.head = copy.deepcopy(args.model.fc)
++            args.model.fc = nn.Identity()
++            args.model = BaseHeadSplit(args.model, args.head)
++            server = FedASCL(args, i)
+         else:
+             raise NotImplementedError
+ 
+@@ -482,6 +492,11 @@ if __name__ == "__main__":
+     parser.add_argument('-mo', "--momentum", type=float, default=0.1)
+     parser.add_argument('-klw', "--kl_weight", type=float, default=0.0)
+ 
++    parser.add_argument('-wb', "--wandb", type=str)
++    # FedASCL
++    parser.add_argument('-mt', "--margin_type", type=str, default="None",
++                        choices=["None", "raw", "scl_dp", "arc", "cos", "rcl", "ecos", "sclp"])
++
+ 
+     args = parser.parse_args()
+ 

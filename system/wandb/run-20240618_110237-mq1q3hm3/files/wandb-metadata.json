@@ -1,0 +1,50 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.12",
+    "heartbeatAt": "2024-06-18T03:02:38.703250",
+    "startedAt": "2024-06-18T03:02:37.423186",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "D:\\Research-Projects-jupyter\\PFLlib\\system\\main.py",
+    "codePath": "system\\main.py",
+    "git": {
+        "remote": "https://github.com/TsingZ0/PFLlib.git",
+        "commit": "004a405da7c159e843d98b2a53e2114d4f859912"
+    },
+    "email": "1731485214@qq.com",
+    "root": "D:/Research-Projects-jupyter/PFLlib",
+    "host": "DESKTOP-4LOGPS7",
+    "username": "paddeyzhang",
+    "executable": "D:\\Reseach Software\\envs\\fl\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2500.0,
+        "min": 0.0,
+        "max": 2500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2500.0,
+            "min": 0.0,
+            "max": 2500.0
+        }
+    ],
+    "disk": {
+        "total": 199.99901962280273,
+        "used": 69.31546020507812
+    },
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3070",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.842487335205078
+    }
+}
